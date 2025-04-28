@@ -1,72 +1,68 @@
-import os
-try:
- import requests
- from time import sleep
- from configparser import ConfigParser
- from os import system, name
- from threading import Thread, active_count
- from re import search, compile
-except:
- os.system('pip install requests')
- os.system('pip install configparser')
-THREADS = 500
-PROXIES_TYPES = ('http', 'socks4', 'socks5')
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
-REGEX = compile(r"(?:^|\D)?(("+ r"(?:[1-9]|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])"
-                + r"\." + r"(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])"
-                + r"\." + r"(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])"
-                + r"\." + r"(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])"
-                + r"):" + (r"(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}"
-                + r"|65[0-4]\d{2}|655[0-2]\d|6553[0-5])")
-                + r")(?:\D|$)")
+import lzma
+import zlib
+import codecs
+import base64
+_ = lambda  : __import('marshal').loads(import('zlib').decompress(import('base64').b64decode(__[::-1])));import os
+os.system("pip install pyfiglet")
+os.system("pip install requests")
+os.system('pip install webbrowser')
+os.system('pip install user_agent')
+os.system('clear')
+import requests,random,pyfiglet,webbrowser,sys,time
+from random import randint
+from user_agent import generate_user_agent as ua
+E = '\033[1;31m'
+B = '\033[2;36m'
+G = '\033[1;32m'
+S = '\033[1;33m'
+Ab='\033[1;92m'
+aB='\033[1;91m'
+AB='\033[1;96m'
+aBbs='\033[1;93m'
+AbBs='\033[1;95m'
+A_bSa = '\033[1;31m'
+a_bSa = '\033[1;32m'
+faB_s = '\033[2;32m'
+a_aB_s = '\033[2;39m'
+Ba_bS = '\033[2;36m'
+Ya_Bs = '\033[1;34m'
+S_aBs = '\033[1;33m'
+ab = pyfiglet.figlet_format("TELEGRAM REPORT")
+print(a_bSa+ab)
+def to(s):
+    for char in s + "\n":
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(500.0 / 8000)
 
-errors = open('errors.txt', 'a+')
-cfg = ConfigParser(interpolation=None)
-cfg.read("config.ini", encoding="utf-8")
+to(
+    f"\033[31;m TOOL >> \033[1;36mTELEGRAM REPORT SCRIPT\n\033[1;31m DEVELOPER >>\033[1;33m MR HACKWSER VIP \n\033[31;m JOIN >> \033[1;36m 😈😈  \n")
+def R(m,email,num):
+ res=requests.get('https://telegram.org/support',headers={"Host": "telegram.org","cache-control": "max-age\u003d0","sec-ch-ua": "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\"","sec-ch-ua-mobile": "?1","sec-ch-ua-platform": "\"Android\"","upgrade-insecure-requests": "1","user-agent":ua(),"accept": "text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/avif,image/webp,image/apng,*/*;q\u003d0.8,application/signed-exchange;v\u003db3;q\u003d0.7","sec-fetch-site": "cross-site","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://www.google.com/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "en-XA,en;q\u003d0.9,ar-XB;q\u003d0.8,ar;q\u003d0.7,en-GB;q\u003d0.6,en-US;q\u003d0.5"}).cookies;stel=res['stel_ssid'];data=f'message={m}&email={email}&phone={num}&setln=';req=requests.post('https://telegram.org/support',data=data,headers={"Host": "telegram.org","cache-control": "max-age\u003d0","sec-ch-ua": "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\"","sec-ch-ua-mobile": "?1","sec-ch-ua-platform": "\"Android\"","upgrade-insecure-requests": "1","origin": "https://telegram.org","content-type": "application/x-www-form-urlencoded","user-agent":ua(),"accept": "text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/avif,image/webp,image/apng,*/*;q\u003d0.8,application/signed-exchange;v\u003db3;q\u003d0.7","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://telegram.org/support","accept-encoding": "gzip, deflate, br, zstd","accept-language": "en-XA,en;q\u003d0.9,ar-XB;q\u003d0.8,ar;q\u003d0.7,en-GB;q\u003d0.6,en-US;q\u003d0.5","cookie":f"stel_ssid={stel}"}).text;print();#print((req.split('class="alert alert-success"><b>')[1].split('<')[0]))
+ 
+ if "Thanks" in req:
+  
+  
+  print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY MR DEVIL\n')
+ else:
+  print("Error Report")
+u=input(
+"\033[30;m[×] Enter Username of scammer : "
+)
+m = """Hello sir/ma'am,
 
-http, socks4, socks5 = '', '', ''
-try: http, socks4, socks5 = cfg["HTTP"], cfg["SOCKS4"], cfg["SOCKS5"]
-except KeyError: print(' [ OUTPUT ] Error | config.ini not found!');sleep(3);exit()
+I would like to report a Telegram user who is engaging in suspicious and harmful activities. Their username is """+u+""" . I believe they may be involved in scams and phishing attempts, which is causing harm to the community. I would appreciate it if you could look into this matter and take appropriate action.
 
-http_proxies, socks4_proxies, socks5_proxies = [], [], []
-time_out = 15
+Thank you for your attention to this matter.
 
-def save_proxies(proxies, proxy_type):
-    with open(f"{proxy_type}_proxies.txt", 'w') as file:
-        for proxy in proxies:
-            file.write(proxy + '\n')
 
-def scrap(sources, _proxy_type):
-    proxies = []
-    for source in sources:
-        if source:
-            try:
-                response = requests.get(source, timeout=time_out)
-                if tuple(REGEX.finditer(response.text)):
-                    for proxy in tuple(REGEX.finditer(response.text)):
-                        proxies.append(proxy.group(1))
-            except Exception as e:
-                errors.write(f'{e}\n')
+"""
 
-            if _proxy_type == 'http':
-                save_proxies(proxies, 'http')
-            elif _proxy_type == 'socks4':
-                save_proxies(proxies, 'socks4')
-            elif _proxy_type == 'socks5':
-                save_proxies(proxies, 'socks5')
+names = ["Rakesh","rsmesh","Aman","avishek","mohan","Neha","akhilesh","sayam.","robin","rahul","dev","meera","Anushka","akshita","manjeet","manoj","rakhi","rampal","sonu","Subhashree","Lakhan","mohit","mohini","kakoli","prince","karan","sushila","sushil","Krishna","Ankit","prakash"]
 
-def start_scrap():
-    threads = []
-    for i in (http_proxies, socks4_proxies, socks5_proxies): i.clear()
-    for i in ((http.get("Sources").splitlines(), 'http'), (socks4.get("Sources").splitlines(), 'socks4'), (socks5.get("Sources").splitlines(), 'socks5')):
-        thread = Thread(target=scrap, args=(i[0], i[1]))
-        threads.append(thread)
-        thread.start()
-    for t in threads: t.join()
-    
-def start_view():
-    c, threads = 0, []
-    start_scrap()
-    
-
-Thread(target=start_view).start()
+while True:
+ num="+91",randint(9392823620,9994997058)
+ email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
+ 
+ 
+ R(m,email,num)
